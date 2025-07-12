@@ -47,6 +47,7 @@
                                 <td>${exp.transactionDate}</td>
                                 <td>${exp.description}</td>
                                 <td>
+                                	<a href="viewexpense?expenseId=${exp.expenseId}" class="btn btn-warning">view</a>
                                     <a href="editExpense?expenseId=${exp.expenseId}" class="btn btn-sm btn-primary">Edit</a>
                                     <a href="deleteexpense?expenseId=${exp.expenseId}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                                 </td>
