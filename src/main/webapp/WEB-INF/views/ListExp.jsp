@@ -29,6 +29,7 @@
                         <th>Amount</th>
                         <th>Date</th>
                         <th>Description</th>
+                        <th>User</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
                                 <td>&#8377; ${exp.amount}</td>
                                 <td>${exp.transactionDate}</td>
                                 <td>${exp.description}</td>
+                                <td>${exp.user.firstName} </td>
                                 <td>
                                 	<a href="viewexpense?expenseId=${exp.expenseId}" class="btn btn-warning">view</a>
                                     <a href="editExpense?expenseId=${exp.expenseId}" class="btn btn-sm btn-primary">Edit</a>

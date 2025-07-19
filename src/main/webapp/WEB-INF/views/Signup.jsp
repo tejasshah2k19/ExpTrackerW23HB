@@ -30,6 +30,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
             </form>
+            <br> <a href="login">Existing User?</a>
         </div>
     </div>
 </div>

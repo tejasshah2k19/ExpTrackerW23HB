@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.entity.ExpenseEntity;
+import com.entity.UserEntity;
 import com.repository.ExpenseRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class ExpenseController {
@@ -24,7 +27,12 @@ public class ExpenseController {
 	}
 
 	@PostMapping("saveExpense")
-	public String saveExpense(ExpenseEntity expenseEntity) {
+	public String saveExpense(ExpenseEntity expenseEntity, HttpSession session) {
+
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		// userId
+		expenseEntity.setUser(user); 
+		
 		expenseRepository.save(expenseEntity);
 		return "NewExpense";
 	}
