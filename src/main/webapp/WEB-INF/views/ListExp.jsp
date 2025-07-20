@@ -10,6 +10,12 @@
 </head>
 <body>
 
+
+
+<jsp:include page="Navbar.jsp"></jsp:include>
+
+
+
 <div class="container mt-5">
     <div class="card border-secondary">
         <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">

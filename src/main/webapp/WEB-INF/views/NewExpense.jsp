@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+      
+     
+
+<jsp:include page="Navbar.jsp"></jsp:include>
+
 
 <div class="container mt-5">
     <div class="card border-info">

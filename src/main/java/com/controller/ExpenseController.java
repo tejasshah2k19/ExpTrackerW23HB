@@ -32,8 +32,11 @@ public class ExpenseController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		// userId
 		expenseEntity.setUser(user); 
-		
 		expenseRepository.save(expenseEntity);
+		
+		//budget -> amount - exp amount 
+		
+		
 		return "NewExpense";
 	}
 

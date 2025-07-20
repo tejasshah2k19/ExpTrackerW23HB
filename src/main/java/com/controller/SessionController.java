@@ -51,10 +51,16 @@ public class SessionController {
 			UserEntity dbUser = op.get();
 			if(dbUser.getPassword().equals(password)) {
 				session.setAttribute("user", dbUser);
-				return "redirect:/newexpense";//url
+				return "redirect:/home";//url
 			}
 		}
 		return "Login";
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();  
+		return "redirect:/login";
 	}
 
 }

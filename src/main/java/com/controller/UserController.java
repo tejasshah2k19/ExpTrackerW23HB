@@ -22,4 +22,9 @@ public class UserController {
 		model.addAttribute("users",users);
 		return "ListUser";
 	}
+
+	@GetMapping("home")
+	public String home() {
+		return "Home";
+	}
 }
