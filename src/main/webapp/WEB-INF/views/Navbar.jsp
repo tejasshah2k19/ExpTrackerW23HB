@@ -14,7 +14,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="listexp">List Expenses</a>
+                <a class="nav-link" href="userlistexp">List Expenses</a>
             </li>
 
             <li class="nav-item">

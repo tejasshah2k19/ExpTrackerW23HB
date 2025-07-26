@@ -9,8 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.entity.BudgetEntity;
 import com.entity.ExpenseEntity;
 import com.entity.UserEntity;
+import com.repository.BudgetRepository;
 import com.repository.ExpenseRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -21,6 +23,9 @@ public class ExpenseController {
 	@Autowired
 	ExpenseRepository expenseRepository;
 
+	@Autowired
+	BudgetRepository budgetRepository; 
+	
 	@GetMapping("newexpense")
 	public String newExpense() {
 		return "NewExpense";
@@ -32,7 +37,14 @@ public class ExpenseController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		// userId
 		expenseEntity.setUser(user); 
-		expenseRepository.save(expenseEntity);
+	
+		
+		//get budget 
+		BudgetEntity budget = budgetRepository.findByUser(user);//id 
+		budget.setAmount(budget.getAmount() - expenseEntity.getAmount());
+		
+		budgetRepository.save(budget);//update //id present 
+		expenseRepository.save(expenseEntity);//id not present 
 		
 		//budget -> amount - exp amount 
 		
